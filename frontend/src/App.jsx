@@ -16,7 +16,7 @@ const App = () => {
     if (!url || url.indexOf('.') === -1 || url.split('.')[1] === '') return;
 
     try {
-    const response = await fetch('http://localhost:8000/', {
+    const response = await fetch('https://shorten-url-backend-production.up.railway.app/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ const App = () => {
   }
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(`http://localhost:8000/${result}`);
+    await navigator.clipboard.writeText(`https://shorten-url-backend-production.up.railway.app/${result}`);
   }
 
   return (
@@ -52,7 +52,7 @@ const App = () => {
       </section>
       { result &&
         <section>
-          <h4>http://localhost:8000/{result}</h4>
+          <h4>shorten-url-backend-production.up.railway.app/{result}</h4>
           <button onClick={handleCopy}>Copy to Clipboard</button>
         </section>
       }
